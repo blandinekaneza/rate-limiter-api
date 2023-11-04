@@ -30,13 +30,14 @@ mvn spring-boot:run
 ### Testing
 
 You can use Postman(an API platform for using APIs) or any other testing platform of your choice.
+The bucket is reset after 1min.
 
 ```shell
 endpont: http://localhost:8080/api/send-notification
 method: POST
 
-Check allowRequest() in NotificationService L16
-set tokens equals to any numbers superior to 100 (maxBucketSize) to get a "Rate limit exceeded" response
-set tokens equals to any numbers inferior to 100 (maxBucketSize) to get a "Request successful" response
-
+body:
+{
+    "subId": "I4AwaGSLSO" // from the subscribers.son file saved in resources
+}
 ```
